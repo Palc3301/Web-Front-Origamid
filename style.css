@@ -1,20 +1,53 @@
-div {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+[required] {
+  border: 2px solid tomato;
 }
 
-@media (min-width: 300px) {
-  div img {
-    order: 2;
+a[href="#contato"] {
+  border: 2px solid greenyellow;
+}
+
+/*Selecionar link interno
+inicia com
+termona com
+*/
+[href^="#"] {
+  background: tomato;
+}
+
+[href$=".com"] {
+  background: greenyellow;
+}
+
+section > h2 {
+  color: tomato;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #ff0000;
+    --texto-1: #6f00ff;
+    --texto-2: #bbb;
   }
 }
 
-img {
-  max-width: 100%;
-  display: block;
+@media (prefers-color-scheme: light) {
+  :root {
+    --fundo: #5900ff;
+    --texto-1: #ff0000;
+    --texto-2: #444;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  background: var(--fundo);
+}
+
+h1 {
+  color: var(--texto-1);
 }
 
 p {
-  font-size: 2rem;
+  color: var(--texto-2);
 }
